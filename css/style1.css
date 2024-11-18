@@ -1,0 +1,332 @@
+/*Restablece los márgenes y el padding a cero en todos los elementos, y ajusta el modelo de caja para que el ancho y alto de los elementos se calculen considerando bordes y rellenos. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*Utiliza Flexbox para organizar los elementos dentro de la barra de navegación (nav). Los elementos se alinean a la derecha */
+nav {
+  display: flex;
+  justify-content: flex-end; /* Alinea los elementos a la derecha */
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 10px 50px;
+  height: 60px;
+}
+/*El logo se alinea a la izquierda de la barra de navegación y empuja otros elementos hacia la derecha*/
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* Empuja el logo hacia la izquierda */
+}
+
+.logo img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 24px;
+  color: white;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  margin-right: 20px;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.carro img {
+  width: 30px;
+}
+/*primer sección- ocupa todo el ancho de la pantalla y tiene una imagen de fondo centrada. Se organiza con Flexbox para centrar el contenido tanto horizontal como verticalmente.*/
+.promo-section {
+  width: 100vw; /* Ocupa todo el ancho de la pantalla */
+  height: 512px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../img/img 1.png"); /* Asegúrate de la ruta correcta */
+  background-size: cover;
+  background-position: center; /* Centra la imagen de fondo */
+  border-radius: 0; /* Elimina el borde redondeado si prefieres un ajuste completo */
+  margin: 0; /* Elimina el centrado */
+}
+
+.descuento {
+  width: 808px;
+  height: 47px;
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 46.88px;
+  color: white;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.buy-button {
+  width: 220px;
+  height: 61px;
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 29.3px;
+  color: white;
+  background-color: #ff0000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/*El botón tiene un diseño rectangular con un fondo rojo y se vuelve más oscuro al pasar el mouse sobre él (efecto hover).*/
+.buy-button:hover {
+  background-color: #cc0000;
+}
+/* segunda seccion de tarjetas*/
+/* Centrar el título */
+.producto {
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.productos {
+  width: 855px;
+  height: 377px;
+  top: 652px;
+  left: 94px;
+  gap: 0px;
+  opacity: 0px;
+}
+/* Contenedor de tarjetas */
+/* Color de fondo para el body */
+body {
+  background: rgba(243, 243, 243, 1);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Centrar el título */
+.producto {
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+/* Contenedor de tarjetas- Los productos se muestran en tarjetas dentro de un contenedor Flexbox. Las tarjetas tienen un fondo blanco, bordes suaves y sombras para darles un efecto de profundidad */
+.card-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que las tarjetas se acomoden en varias filas en pantallas pequeñas */
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  width: 100%; /* Para pantallas pequeñas */
+  max-width: 200px; /* Para limitar el ancho máximo en pantallas grandes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.divider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0;
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Responsive para pantallas móviles (hasta 411px) */
+@media (max-width: 411px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 90%; /* Ajuste de ancho para móviles */
+    max-width: 100%;
+  }
+}
+
+/* Responsive para pantallas de escritorio (1024px y mayores) */
+@media (min-width: 1024px) {
+  .card-container {
+    justify-content: center;
+  }
+}
+/*tercer sección de productos destacados*/
+/* Título de la sección */
+.seccion-titulo {
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+/* Contenedor de los banners- Los banners se alinean en filas, utilizando Flexbox. Los banners tienen una imagen de fondo con un texto encima, el cual está posicionado en la parte inferior derecha. */
+.banner-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que se ajusten en pantallas pequeñas */
+  margin: 0 20px;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Ancho máximo para cada banner */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.banner-texto {
+  position: absolute;
+  bottom: 10px;
+  right: 10px; /* Alinhado a la derecha */
+  color: #fff;
+  font-size: 25px; /* Tamaño de fuente aumentado a 25px */
+  font-family: "Roboto", sans-serif; /* Fuente Roboto */
+  text-align: center; /* Alineación centrada */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+/*Las reglas de @media se usan para hacer que el sitio sea más amigable en dispositivos móviles. Los elementos se reorganizan para que se muestren de manera vertical en pantallas pequeñas.*/
+/* Responsive para pantallas móviles (hasta 411px) */
+@media (max-width: 411px) {
+  .banner-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .banner {
+    width: 90%; /* Ajuste de ancho para móviles */
+    max-width: 100%;
+  }
+}
+
+/* Responsive para pantallas de escritorio (1024px y mayores) */
+@media (min-width: 1024px) {
+  .banner-container {
+    justify-content: center;
+  }
+}
+/*footer*/
+/* Establece el color de fondo del body */
+body {
+  background-color: #f4f4f4; /* Fondo claro */
+  font-family: Arial, sans-serif; /* Fuente general */
+  margin: 0;
+  padding: 0;
+}
+
+/* Pie de página tiene un fondo oscuro y contiene el logo y enlaces a redes sociales. También tiene un texto de derechos reservados al final de la página. */
+footer {
+  background-color: #333; /* Fondo oscuro */
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px;
+  width: 100%;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Redes Sociales */
+.redes-sociales {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.texto-redes {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.redes i {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.redes i:hover {
+  transform: scale(1.1);
+}
+
+/* Derechos reservados */
+.derechos {
+  position: fixed; /* Fijo en la parte inferior */
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  height: 25px;
+  bottom: 0; /* Coloca el texto al final */
+  text-align: center;
+  font-size: 14px;
+  color: #333; /* Color del texto oscuro */
+  background-color: #f4f4f4; /* Fondo gris igual al del body */
+  padding: 5px; /* Espaciado */
+}
+.derechos p {
+  margin: 0;
+}
